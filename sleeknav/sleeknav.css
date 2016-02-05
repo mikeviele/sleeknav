@@ -1,0 +1,148 @@
+.sleek {
+  font-family: Verdana, Geneva, sans-serif; }
+  .sleek.sleek-regular {
+    position: relative;
+    float: right; }
+    .sleek.sleek-regular .sleekburger {
+      /* the colors of your sleekburger */
+      background: #959595; }
+      .sleek.sleek-regular .sleekburger:before {
+        background: #959595; }
+      .sleek.sleek-regular .sleekburger:after {
+        background: #959595; }
+  .sleek.sleek-fixed {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    background-color: #636363; }
+    .sleek.sleek-fixed .sleekburger {
+      float: right;
+      /* the colors of your sleekburger */
+      background: #959595; }
+      .sleek.sleek-fixed .sleekburger:before {
+        background: #959595; }
+      .sleek.sleek-fixed .sleekburger:after {
+        background: #959595; }
+  .sleek .sleeknav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    z-index: 90; }
+    .sleek .sleeknav .sleek-overlay {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%; }
+      .sleek .sleeknav .sleek-overlay .sleek-background {
+        background: rgba(99, 99, 99, 0.9);
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0; }
+      .sleek .sleeknav .sleek-overlay ul {
+        position: relative;
+        width: 100%;
+        text-align: center;
+        margin: 0;
+        padding: 0; }
+        .sleek .sleeknav .sleek-overlay ul li a {
+          color: #ffffff;
+          display: block;
+          width: 100%;
+          padding: 10px;
+          font-size: 20px;
+          font-weight: 700;
+          text-decoration: none;
+          -webkit-transition-duration: 0.3s;
+          -moz-transition-duration: 0.3s;
+          -ms-transition-duration: 0.3s;
+          -o-transition-duration: 0.3s;
+          transition-duration: 0.3s; }
+        .sleek .sleeknav .sleek-overlay ul ul {
+          display: none;
+          margin: 10px 0; }
+      .sleek .sleeknav .sleek-overlay .sleek-overlay-outer {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        max-height: 100%;
+        width: 100%;
+        overflow-y: scroll;
+        padding: 100px 0; }
+  .sleek .sleekburger {
+    height: 4px;
+    width: 30px;
+    position: relative;
+    margin: 20px 15px;
+    z-index: 99; }
+    .sleek .sleekburger:before {
+      content: ' ';
+      display: block;
+      position: absolute;
+      top: -9px;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 4px;
+      -webkit-transition-duration: 0.2s;
+      -moz-transition-duration: 0.2s;
+      -ms-transition-duration: 0.2s;
+      -o-transition-duration: 0.2s;
+      transition-duration: 0.2s; }
+    .sleek .sleekburger:after {
+      content: ' ';
+      display: block;
+      position: absolute;
+      bottom: -9px;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 4px;
+      -webkit-transition-duration: 0.2s;
+      -moz-transition-duration: 0.2s;
+      -ms-transition-duration: 0.2s;
+      -o-transition-duration: 0.2s;
+      transition-duration: 0.2s; }
+    .sleek .sleekburger a {
+      position: absolute;
+      top: -13px;
+      bottom: -13px;
+      width: 100%;
+      z-index: 100; }
+    .sleek .sleekburger.sleek-close {
+      background: transparent !important; }
+      .sleek .sleekburger.sleek-close:before {
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
+        top: 0;
+        -webkit-transition-duration: 0.2s;
+        -moz-transition-duration: 0.2s;
+        -ms-transition-duration: 0.2s;
+        -o-transition-duration: 0.2s;
+        transition-duration: 0.2s; }
+      .sleek .sleekburger.sleek-close:after {
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        bottom: 0;
+        -webkit-transition-duration: 0.2s;
+        -moz-transition-duration: 0.2s;
+        -ms-transition-duration: 0.2s;
+        -o-transition-duration: 0.2s;
+        transition-duration: 0.2s; }
