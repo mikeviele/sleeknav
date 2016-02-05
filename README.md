@@ -1,7 +1,7 @@
 # SleekNav
-A sleek alternative to traditional web navigation
+#### A sleek alternative to traditional web navigation
 
-A sleek alternative to traditional website navigation. Out of the way when closed, yet clean and classy when opened. Easily installed, styled, and used.
+SleekNav is an alternative to traditional website navigation. Out of the way when closed, yet clean and classy when opened. Easily installed, styled, and used.
 
 ## SleekNav's Features
 
