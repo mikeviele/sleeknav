@@ -32,38 +32,38 @@ MENU MARKUP
 
 Mark up your navigation the way you normally would. Just add a class of "sleek" and either "sleek-fixed" or "sleek-relative" to the container.
 
-<code>
-						<span class="bracket">&lt;</span>div class=<span class="quoted">"sleek sleek-fixed"</span><span class="bracket">&gt;</span><br />
-							<span class="tab"><span class="bracket">&lt;</span>ul<span class="bracket">&gt;</span><br /></span>
-								<span class="tab"><span class="tab"><span class="bracket">&lt;</span>li<span class="bracket">&gt;</span><span class="bracket">&lt;</span>a href=<span class="quoted">"/pages/page-1.php"</span><span class="bracket">&gt;</span>Page One<span class="bracket">&lt;</span>/a<span class="bracket">&gt;</span><span class="bracket">&lt;</span>/li<span class="bracket">&gt;</span><br /></span></span>
-								<span class="tab"><span class="tab"><span class="bracket">&lt;</span>li<span class="bracket">&gt;</span><span class="bracket">&lt;</span>a href=<span class="quoted">"/pages/page-2.php"</span><span class="bracket">&gt;</span>Page Two<span class="bracket">&lt;</span>/a<span class="bracket">&gt;</span><br /></span></span>
-									<span class="tab"><span class="tab"><span class="tab"><span class="bracket">&lt;</span>ul<span class="bracket">&gt;</span><br /></span></span></span>
-										<span class="tab"><span class="tab"><span class="tab"><span class="tab"><span class="bracket">&lt;</span>li<span class="bracket">&gt;</span><span class="bracket">&lt;</span>a href=<span class="quoted">"/pages/child-page-1.php"</span><span class="bracket">&gt;</span>Child Page One<span class="bracket">&lt;</span>/a<span class="bracket">&gt;</span><span class="bracket">&lt;</span>/li<span class="bracket">&gt;</span><br /></span></span></span></span>
-										<span class="tab"><span class="tab"><span class="tab"><span class="tab"><span class="bracket">&lt;</span>li<span class="bracket">&gt;</span><span class="bracket">&lt;</span>a href=<span class="quoted">"/pages/child-page-2.php"</span><span class="bracket">&gt;</span>Child Page Two<span class="bracket">&lt;</span>/a<span class="bracket">&gt;</span><br /></span></span></span></span>
-											<span class="tab"><span class="tab"><span class="tab"><span class="tab"><span class="tab"><span class="bracket">&lt;</span>ul<span class="bracket">&gt;</span><br /></span></span></span></span></span>
-												<span class="tab"><span class="tab"><span class="tab"><span class="tab"><span class="tab"><span class="tab"><span class="bracket">&lt;</span>li<span class="bracket">&gt;</span><span class="bracket">&lt;</span>a href=<span class="quoted">"/pages/grandchild-page-1.php"</span><span class="bracket">&gt;</span>Grandchild Page One<span class="bracket">&lt;</span>/a<span class="bracket">&gt;</span><span class="bracket">&lt;</span>/li<span class="bracket">&gt;</span><br /></span></span></span></span></span></span>
-												<span class="tab"><span class="tab"><span class="tab"><span class="tab"><span class="tab"><span class="tab"><span class="bracket">&lt;</span>li<span class="bracket">&gt;</span><span class="bracket">&lt;</span>a href=<span class="quoted">"/pages/grandchild-page-2.php"</span><span class="bracket">&gt;</span>Grandchild Page Two<span class="bracket">&lt;</span>/a<span class="bracket">&gt;</span><span class="bracket">&lt;</span>/li<span class="bracket">&gt;</span><br /></span></span></span></span></span></span>
-												<span class="tab"><span class="tab"><span class="tab"><span class="tab"><span class="tab"><span class="tab"><span class="bracket">&lt;</span>li<span class="bracket">&gt;</span><span class="bracket">&lt;</span>a href=<span class="quoted">"/pages/grandchild-page-3.php"</span><span class="bracket">&gt;</span>Grandchild Page Three<span class="bracket">&lt;</span>/a<span class="bracket">&gt;</span><span class="bracket">&lt;</span>/li<span class="bracket">&gt;</span><br /></span></span></span></span></span></span>
-												<span class="tab"><span class="tab"><span class="tab"><span class="tab"><span class="tab"><span class="tab"><span class="bracket">&lt;</span>li<span class="bracket">&gt;</span><span class="bracket">&lt;</span>a href=<span class="quoted">"/pages/grandchild-page-4.php"</span><span class="bracket">&gt;</span>Grandchild Page Four<span class="bracket">&lt;</span>/a<span class="bracket">&gt;</span><span class="bracket">&lt;</span>/li<span class="bracket">&gt;</span><br /></span></span></span></span></span></span>
-											<span class="tab"><span class="tab"><span class="tab"><span class="tab"><span class="tab"><span class="bracket">&lt;</span>/ul<span class="bracket">&gt;</span><br /></span></span></span></span></span>
-										<span class="tab"><span class="tab"><span class="tab"><span class="tab"><span class="bracket">&lt;</span>/li<span class="bracket">&gt;</span><br /></span></span></span></span>
-									<span class="tab"><span class="tab"><span class="tab"><span class="bracket">&lt;</span>/ul<span class="bracket">&gt;</span><br /></span></span></span>
-								<span class="tab"><span class="tab"><span class="bracket">&lt;</span>/li<span class="bracket">&gt;</span><br /></span></span>
-								<span class="tab"><span class="tab"><span class="bracket">&lt;</span>li<span class="bracket">&gt;</span><span class="bracket">&lt;</span>a href=<span class="quoted">"/pages/page-3.php"</span><span class="bracket">&gt;</span>Page Three<span class="bracket">&lt;</span>/a<span class="bracket">&gt;</span><span class="bracket">&lt;</span>/li<span class="bracket">&gt;</span><br /></span></span>
-								<span class="tab"><span class="tab"><span class="bracket">&lt;</span>li<span class="bracket">&gt;</span><span class="bracket">&lt;</span>a href=<span class="quoted">"/pages/page-4.php"</span><span class="bracket">&gt;</span>Page Four<span class="bracket">&lt;</span>/a<span class="bracket">&gt;</span><br /></span></span>
-									<span class="tab"><span class="tab"><span class="tab"><span class="bracket">&lt;</span>ul<span class="bracket">&gt;</span><br /></span></span></span>
-										<span class="tab"><span class="tab"><span class="tab"><span class="tab"><span class="bracket">&lt;</span>li<span class="bracket">&gt;</span><span class="bracket">&lt;</span>a href=<span class="quoted">"/pages/child-page-1.php"</span><span class="bracket">&gt;</span>Child Page One<span class="bracket">&lt;</span>/a<span class="bracket">&gt;</span><span class="bracket">&lt;</span>/li<span class="bracket">&gt;</span><br /></span></span></span></span>
-										<span class="tab"><span class="tab"><span class="tab"><span class="tab"><span class="bracket">&lt;</span>li<span class="bracket">&gt;</span><span class="bracket">&lt;</span>a href=<span class="quoted">"/pages/child-page-2.php"</span><span class="bracket">&gt;</span>Child Page Two<span class="bracket">&lt;</span>/a<span class="bracket">&gt;</span><br /></span></span></span></span>
-											<span class="tab"><span class="tab"><span class="tab"><span class="tab"><span class="tab"><span class="bracket">&lt;</span>ul<span class="bracket">&gt;</span><br /></span></span></span></span></span>
-												<span class="tab"><span class="tab"><span class="tab"><span class="tab"><span class="tab"><span class="tab"><span class="bracket">&lt;</span>li<span class="bracket">&gt;</span><span class="bracket">&lt;</span>a href=<span class="quoted">"/pages/grandchild-page-1.php"</span><span class="bracket">&gt;</span>Grandchild Page One<span class="bracket">&lt;</span>/a<span class="bracket">&gt;</span><span class="bracket">&lt;</span>/li<span class="bracket">&gt;</span><br /></span></span></span></span></span></span>
-												<span class="tab"><span class="tab"><span class="tab"><span class="tab"><span class="tab"><span class="tab"><span class="bracket">&lt;</span>li<span class="bracket">&gt;</span><span class="bracket">&lt;</span>a href=<span class="quoted">"/pages/grandchild-page-2.php"</span><span class="bracket">&gt;</span>Grandchild Page Two<span class="bracket">&lt;</span>/a<span class="bracket">&gt;</span><span class="bracket">&lt;</span>/li<span class="bracket">&gt;</span><br /></span></span></span></span></span></span>
-											<span class="tab"><span class="tab"><span class="tab"><span class="tab"><span class="tab"><span class="bracket">&lt;</span>/ul<span class="bracket">&gt;</span><br /></span></span></span></span></span>
-										<span class="tab"><span class="tab"><span class="tab"><span class="tab"><span class="bracket">&lt;</span>/li<span class="bracket">&gt;</span><br /></span></span></span></span>
-										<span class="tab"><span class="tab"><span class="tab"><span class="tab"><span class="bracket">&lt;</span>li<span class="bracket">&gt;</span><span class="bracket">&lt;</span>a href=<span class="quoted">"/pages/child-page-3.php"</span><span class="bracket">&gt;</span>Child Page Three<span class="bracket">&lt;</span>/a<span class="bracket">&gt;</span><span class="bracket">&lt;</span>/li<span class="bracket">&gt;</span><br /></span></span></span></span>
-										<span class="tab"><span class="tab"><span class="tab"><span class="tab"><span class="bracket">&lt;</span>li<span class="bracket">&gt;</span><span class="bracket">&lt;</span>a href=<span class="quoted">"/pages/child-page-4.php"</span><span class="bracket">&gt;</span>Child Page Four<span class="bracket">&lt;</span>/a<span class="bracket">&gt;</span><span class="bracket">&lt;</span>/li<span class="bracket">&gt;</span><br /></span></span></span></span>
-									<span class="tab"><span class="tab"><span class="tab"><span class="bracket">&lt;</span>/ul<span class="bracket">&gt;</span><br /></span></span></span>
-								<span class="tab"><span class="tab"><span class="bracket">&lt;</span>/li<span class="bracket">&gt;</span><br /></span></span>
-								<span class="tab"><span class="tab"><span class="bracket">&lt;</span>li<span class="bracket">&gt;</span><span class="bracket">&lt;</span>a href=<span class="quoted">"/pages/page-5.php"</span><span class="bracket">&gt;</span>Page Five<span class="bracket">&lt;</span>/a<span class="bracket">&gt;</span><span class="bracket">&lt;</span>/li<span class="bracket">&gt;</span><br /></span></span>
-							<span class="tab"><span class="bracket">&lt;</span>/ul<span class="bracket">&gt;</span><br /></span>
-						<span class="bracket">&lt;</span>/div<span class="bracket">&gt;</span>
-					</code>
+```html
+<div class="sleek sleek-fixed">
+	<ul>
+		<li><a href="/pages/page-1.php">Page One</a></li>
+		<li><a href="/pages/page-2.php">Page Two</a>
+			<ul>
+				<li><a href="/pages/child-page-1.php">Child Page One</a></li>
+				<li><a href="/pages/child-page-2.php">Child Page Two</a>
+					<ul>
+						<li><a href="/pages/grandchild-page-1.php">Grandchild Page One</a></li>
+						<li><a href="/pages/grandchild-page-2.php">Grandchild Page Two</a></li>
+						<li><a href="/pages/grandchild-page-3.php">Grandchild Page Three</a></li>
+						<li><a href="/pages/grandchild-page-4.php">Grandchild Page Four</a></li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+		<li><a href="/pages/page-3.php">Page Three</a></li>
+		<li><a href="/pages/page-4.php">Page Four</a>
+			<ul>
+				<li><a href="/pages/child-page-1.php">Child Page One</a></li>
+				<li><a href="/pages/child-page-2.php">Child Page Two</a>
+					<ul>
+						<li><a href="/pages/grandchild-page-1.php">Grandchild Page One</a></li>
+						<li><a href="/pages/grandchild-page-2.php">Grandchild Page Two</a></li>
+					</ul>
+				</li>
+				<li><a href="/pages/child-page-3.php">Child Page Three</a></li>
+				<li><a href="/pages/child-page-4.php">Child Page Four</a></li>
+			</ul>
+		</li>
+		<li><a href="/pages/page-5.php">Page Five</a></li>
+	</ul>
+</div>
+```
