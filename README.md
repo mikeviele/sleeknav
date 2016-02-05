@@ -11,10 +11,10 @@ To see SleekNav in action, toggle the hamburger icon in the top right corner. Sl
 
 ###SleekNav features the following:
 
-*Clean, out of the way styling
-*CSS3 transitions for smooth animation
-*Easily used pop-over navigation
-*Works in all major browsers
+* Clean, out of the way styling
+* CSS3 transitions for smooth animation
+* Easily used pop-over navigation
+* Works in all major browsers
 
 SleekNav is designed to be used with fixed positioning or relative positioning. Fixed positioning will create a bar at the top of your website with the hamburger inside. Relative positioning will create a hamburger wherever you place the code with the intention that it be styled to work around other elements. Fixed and relative positioning is declared with the use of classes ".sleek-fixed" and ".sleek-relative" respectively when you mark up your navigation.
 
