@@ -1,6 +1,6 @@
 /*
 
- Version: 1.0.0
+ Version: 1.0.1
   Author: Axion Media Lab
  Website: http://sleeknav.github.io
     Docs: http://sleeknav.github.io/sleek
@@ -8,31 +8,43 @@
   Issues: http://github.com/sleeknav/issues
 */
 
-jQuery(document).ready(function($) {
-	var sleekul = $('.sleek').html();
-	$('.sleek ul').remove();
-	$('.sleek').prepend('<div class="sleekburger"><a href="#"></a></div><div class="sleeknav"><div class="sleek-overlay"><div class="sleek-background"></div><div class="sleek-overlay-outer"><div class="sleek-overlay-inner">' + sleekul + '</div></div></div></div>');
+jQuery(function( $ ) {
+	var $sleek  = $(.sleek'),
+	    $sleekFixed = $('.sleek-fixed');
+	    sleekUL_HTML = $sleek.html(),
+	    $burgerOverlayInner = $( '<div class="sleek-overlay-inner" />' ).html( sleekUL_HTML ),
+	    $burger = $('<div class="sleekburger"><a href="#"></a></div><div class="sleeknav"><div class="sleek-overlay"><div class="sleek-background"></div><div class="sleek-overlay-outer"></div></div></div>'),
+	    flag;
+
+	$sleek.find('ul').remove();
+	$sleek.prepend( $burger );
 	
-	//take all parents and append them above their children
-	var parent;
-	$('.sleek ul ul').each(function() {
-		//store contents of parent li
-		parent = $(this).parent('li').html();
-		//prepend ul with its parent link
-		$(this).prepend('<li class="menu-parent">' + parent + '</li>');
-		//remove ul from contents of parent li
-		$(this).children('li').first().children('ul').remove();
+	$burger.find('.sleek-overlay-outer').append( $burgerOverlayInner );
+
+	// Take all parents and append them above their children.
+	// @todo: This selector could be more efficient.
+	$sleek.find('ul ul').each( function() {
+		
+	    var $this = $(this),
+	    //prepend ul with its parent link
+	    $parent_li = $('<li class="menu-parent">').html( $this.parent('li').html() );
+		
+	    $this.prepend( $parent_li );
+	    //remove ul from contents of parent li
+	    $this.children('li').first().children('ul').remove();
 	});
 	
-	//if fixed positioning add padding to sleeknavs container
-	if ($('.sleek-fixed').length > 0) {
-		var sleekHeight = parseInt($('.sleek-fixed').outerHeight());
-		var sleekPadding = parseInt($('.sleek-fixed').parent().css('padding-top'));
-		$('.sleek-fixed').parent().css('padding-top', sleekPadding + sleekHeight);
+	// If fixed positioning add padding to sleeknavs container.
+	// @todo: If this selector is used in combination with the .sleek class could narrow selection.
+	if ( $sleekFixed.length > 0 ) {
+		var sleekHeight = parseInt($sleekFixed.outerHeight());
+		var sleekPadding = parseInt($sleekFixed.parent().css('padding-top'));
+		$sleekFixed.parent().css('padding-top', sleekPadding + sleekHeight);
 	}
 	
-	//controlling functions
-	var flag;
+	// Event Binding Functions
+	
+	// @todo All theses selectors could be cleaned up.
 	$('.sleekburger a').click(function(e) {
 		e.preventDefault();
 		$('.sleeknav ul ul').slideUp(300);
@@ -42,15 +54,18 @@ jQuery(document).ready(function($) {
 		$('.sleeknav .sleek-overlay-outer').height($('.sleek-overlay-outer .sleek-overlay-inner').height());
 	});
 	$('.sleeknav ul li a').click(function(e) {
+		var $this = $(this),
+		    $parent = $this.parent();
+		
 		//if this has children
-		if ($(this).parent().children('ul').length > 0) {
+		if ( $parent.children('ul').length > 0 ) {
 			//has children
 			e.preventDefault();
-			if (!$(this).parent().children('ul').is(':visible')) {
+			if (! $parent.children('ul').is(':visible')) {
 				//children are not visible
-				$(this).parent().children('ul').slideDown(300);
-				$(this).parent().siblings().children('ul').slideUp(300);
-				$(this).closest('ul').children('li').children('a').css('color', 'rgba(255, 255, 255, 0.2)');
+				$parent.children('ul').slideDown(300);
+				$parent.siblings().children('ul').slideUp(300);
+				$this.closest('ul').children('li').children('a').css('color', 'rgba(255, 255, 255, 0.2)');
 				flag = 0;
 				setInterval(function() {
 					flag++;
@@ -61,10 +76,10 @@ jQuery(document).ready(function($) {
 				}, 10);
 				return;
 			}
-			if ($(this).parent().children('ul').is(':visible')) {
+			if ($parent.children('ul').is(':visible')) {
 				//children are currently visible
-				$(this).parent().children('ul').slideUp(300);
-				$(this).closest('ul').children('li').children('a').css('color', 'rgba(255, 255, 255, 1)');
+				$parent.children('ul').slideUp(300);
+				$this.closest('ul').children('li').children('a').css('color', 'rgba(255, 255, 255, 1)');
 				flag = 0;
 				setInterval(function() {
 					flag++;
