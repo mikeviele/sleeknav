@@ -12,7 +12,7 @@
 <script type="text/javascript" src="sleeknav/jquery.sleeknav.js"></script>
 </head>
 <body>
-	<div class="sleek sleek-fixed">
+	<div class="nav sleek-fixed">
 		<ul>
 			<li><a href="/pages/page-1.php">Page One</a></li>
 			<li><a href="/pages/page-2.php">Page Two</a>
@@ -45,8 +45,14 @@
 			<li><a href="/pages/page-5.php">Page Five</a></li>
 		</ul>
 	</div>
-	
+
 	<h1>SleekNav Demo</h1>
 	<p>This demo site is purposely minimalistic. There are no styles or scripts other than those used to keep SleekNav running. Its purpose is to show how easy it is to start using SleekNav.</p>
+
+	<script>
+		jQuery(document).ready(function($) {
+			$('.nav').sleeknav();
+		});
+	</script>
 </body>
 </html>
