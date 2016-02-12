@@ -12,7 +12,7 @@
 <script type="text/javascript" src="sleeknav/jquery.sleeknav.js"></script>
 </head>
 <body>
-	<div class="nav sleek-fixed">
+	<div class="nav">
 		<ul>
 			<li><a href="/pages/page-1.php">Page One</a></li>
 			<li><a href="/pages/page-2.php">Page Two</a>
@@ -51,7 +51,9 @@
 
 	<script>
 		jQuery(document).ready(function($) {
-			$('.nav').sleeknav();
+			$('.nav').sleeknav({
+				navPosition: 'fixed'
+			});
 		});
 	</script>
 </body>
