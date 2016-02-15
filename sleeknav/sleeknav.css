@@ -66,6 +66,8 @@
           -ms-transition-duration: 0.3s;
           -o-transition-duration: 0.3s;
           transition-duration: 0.3s; }
+          .sleek .sleeknav .sleek-overlay ul li a.faded {
+            color: #aaaaaa; }
         .sleek .sleeknav .sleek-overlay ul ul {
           display: none;
           margin: 10px 0; }

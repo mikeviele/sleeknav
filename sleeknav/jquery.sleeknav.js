@@ -1,6 +1,6 @@
 /*
 
- Version: 1.0.0
+ Version: 1.0.1
   Author: Axion Media Lab
  Website: http://sleeknav.github.io
     Docs: http://sleeknav.github.io/sleek
@@ -18,13 +18,21 @@
 
 		var settings = $.extend( {}, defaults, options );
 
-	    var sleekul = this.html();
+		var sleekul = this.html();
 		this.children('ul').remove();
-		this.prepend('<div class="sleekburger"><a href="#"></a></div><div class="sleeknav"><div class="sleek-overlay"><div class="sleek-background"></div><div class="sleek-overlay-outer"><div class="sleek-overlay-inner">' + sleekul + '</div></div></div></div>');
+		this.prepend('<div class="sleekburger"><a href="#"></a></div><div class="sleeknav"><div class="sleek-overlay"><div class="sleek-background"></div><div class="sleek-overlay-outer"><div class="sleek-overlay-inner"></div></div></div></div>');
+
 		this.addClass('sleek');
 
-		switch ( settings.navPosition ) {
+		var $sleek = $('.sleek'),
+			$sleekNav = $('.sleeknav'),
+			$sleekNavOuter = $sleekNav.find('.sleek-overlay-outer'),
+			$sleekNavInner = $sleekNav.find('.sleek-overlay-inner'),
+			$sleekBurger = $('.sleekburger');
 
+		$sleekNavInner.html(sleekul);
+
+		switch ( settings.navPosition ) {
 		    case 'fixed':
 		        this.addClass('sleek-fixed');
 		        break;
@@ -35,12 +43,11 @@
 
 		    default:
 		        this.addClass('sleek-fixed');
-
 		}
 
 		//take all parents and append them above their children
 		var parent;
-		$('.sleek ul ul').each(function() {
+		$sleek.find('ul ul').each(function() {
 			//store contents of parent li
 			parent = $(this).parent('li').html();
 			//prepend ul with its parent link
@@ -50,23 +57,24 @@
 		});
 
 		//if fixed positioning add padding to sleeknavs container
-		if ($('.sleek-fixed').length > 0) {
-			var sleekHeight = parseInt($('.sleek-fixed').outerHeight());
-			var sleekPadding = parseInt($('.sleek-fixed').parent().css('padding-top'));
-			$('.sleek-fixed').parent().css('padding-top', sleekPadding + sleekHeight);
+		var $sleekFixed = $('.sleek-fixed');
+		if ($sleekFixed.length > 0) {
+			var sleekHeight = parseInt($sleekFixed.outerHeight());
+			var sleekPadding = parseInt($sleekFixed.parent().css('padding-top'));
+			$sleekFixed.parent().css('padding-top', sleekPadding + sleekHeight);
 		}
 
 		//controlling functions
 		var flag;
-		$('.sleekburger a').click(function(e) {
+		$sleekBurger.find('a').click(function(e) {
 			e.preventDefault();
-			$('.sleeknav ul ul').slideUp(300);
-			$('.sleeknav ul li a').css('color', 'rgba(255, 255, 255, 1)');
-			$('.sleekburger').toggleClass('sleek-close');
-			$('.sleeknav').fadeToggle();
-			$('.sleeknav .sleek-overlay-outer').height($('.sleek-overlay-outer .sleek-overlay-inner').height());
+			$sleekNav.find('ul ul').slideUp(300);
+			$sleekNav.find('ul li a').removeClass('faded');
+			$sleekBurger.toggleClass('sleek-close');
+			$sleekNav.fadeToggle();
+			$sleekNavOuter.height($sleekNavInner.height());
 		});
-		$('.sleeknav ul li a').click(function(e) {
+		$sleekNav.find('ul li a').click(function(e) {
 			//if this has children
 			if ($(this).parent().children('ul').length > 0) {
 				//has children
@@ -75,11 +83,11 @@
 					//children are not visible
 					$(this).parent().children('ul').slideDown(300);
 					$(this).parent().siblings().children('ul').slideUp(300);
-					$(this).closest('ul').children('li').children('a').css('color', 'rgba(255, 255, 255, 0.2)');
+					$(this).closest('ul').children('li').children('a').addClass('faded');
 					flag = 0;
 					setInterval(function() {
 						flag++;
-						$('.sleeknav .sleek-overlay-outer').height($('.sleeknav .sleek-overlay-inner').height());
+						$sleekNavOuter.height($sleekNavInner.height());
 						if (flag == 30) {
 							return;
 						}
@@ -89,11 +97,11 @@
 				if ($(this).parent().children('ul').is(':visible')) {
 					//children are currently visible
 					$(this).parent().children('ul').slideUp(300);
-					$(this).closest('ul').children('li').children('a').css('color', 'rgba(255, 255, 255, 1)');
+					$(this).closest('ul').children('li').children('a').removeClass('faded');
 					flag = 0;
 					setInterval(function() {
 						flag++;
-						$('.sleeknav .sleek-overlay-outer').height($('.sleeknav .sleek-overlay-inner').height());
+						$sleekNavOuter.height($sleekNavInner.height());
 						if (flag == 30) {
 							return;
 						}
