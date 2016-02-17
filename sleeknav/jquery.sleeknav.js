@@ -2,10 +2,10 @@
 
  Version: 1.0.1
   Author: Axion Media Lab
- Website: http://sleeknav.github.io
-    Docs: http://sleeknav.github.io/sleek
-    Repo: http://github.com/sleeknav
-  Issues: http://github.com/sleeknav/issues
+ Website: http://sleeknav.com/
+    Docs: https://github.com/axionmedialab/sleeknav
+    Repo: https://github.com/axionmedialab/sleeknav
+  Issues: https://github.com/axionmedialab/sleeknav/issues
 */
 
 (function ( $ ) {
