@@ -1,5 +1,7 @@
 .sleek {
   font-family: Verdana, Geneva, sans-serif; }
+  .sleek * {
+    box-sizing: border-box; }
   .sleek.sleek-regular {
     position: relative;
     float: right; }
