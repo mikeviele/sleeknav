@@ -16,7 +16,7 @@ To see SleekNav in action, toggle the hamburger icon in the top right corner. Sl
 * Easily used pop-over navigation
 * Works in all major browsers
 
-SleekNav is designed to be used with fixed positioning or relative positioning. Fixed positioning will create a bar at the top of your website with the hamburger inside. Relative positioning will create a hamburger wherever you place the code with the intention that it be styled to work around other elements. Fixed and relative positioning is declared with the use of classes ".sleek-fixed" and ".sleek-relative" respectively when you mark up your navigation.
+SleekNav is designed to be used with fixed positioning or relative positioning. Fixed positioning will create a bar at the top of your website with the hamburger inside. Relative positioning will create a hamburger wherever you place the code with the intention that it be styled to work around other elements. Fixed and relative positioning is declared with the use of 'navPosition' option. Use either 'fixed' or 'relative'. Fixed is used by default.
 
 ## SleekNav's Installation
 
@@ -32,10 +32,10 @@ Add "sleeknav.css" and "jquery.sleeknav.js" to your project. Make sure jQuery is
 
 #### MENU MARKUP
 
-Mark up your navigation the way you normally would. Just add a class of "sleek" and either "sleek-fixed" or "sleek-relative" to the container.
+Mark up your navigation the way you normally would. All you need to do is make sure you can target the container.
 
 ```html
-<div class="sleek sleek-fixed">
+<div class="nav">
 	<ul>
 		<li><a href="/pages/page-1.php">Page One</a></li>
 		<li><a href="/pages/page-2.php">Page Two</a>
@@ -68,4 +68,24 @@ Mark up your navigation the way you normally would. Just add a class of "sleek" 
 		<li><a href="/pages/page-5.php">Page Five</a></li>
 	</ul>
 </div>
+```
+
+#### INITIALIZE
+
+Initialize SleekNav on the container of your navigation. This can be added right before the closing body tag or in a separate JS file that is loaded after "jquery.sleeknav.js".
+
+```js
+jQuery(function($) {
+	$('.nav').sleeknav();
+});
+```
+
+#### OPTIONS
+
+Currently SleekNav has one option. You can choose between a 'fixed' nav or a 'relative' nav.
+
+```js
+$('.nav').sleeknav({
+	navPosition: 'fixed' //default
+});
 ```
